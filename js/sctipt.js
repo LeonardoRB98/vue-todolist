@@ -13,11 +13,12 @@
 // al click di un bottono parte un setInterval che fa il push di una nuovo
 // task ogni 5 secondi poi crea un pulsante per stopparolo
 let app = new Vue ({
-  el: '#container',
+  el: '#wrapper',
   data: {
     tasks: ['fare la spesa', 'Guardare la partita di calcio', 'Chiamare medico', 'Andare dal meccanico'],
     newTask: '',
     enter: 13,
+    autoPlay: '',
   },
   methods: {
     newTaskPush: function() {
@@ -31,6 +32,17 @@ let app = new Vue ({
       if (event.which == this.enter) {
         this.newTaskPush();
       }
+    },
+    autoTask: function() {
+      this.autoPlay = setInterval(
+        () => {
+          this.newTask = 'setInterval';
+          this.newTaskPush();
+        },5000
+      );
+    },
+    stopAutoTask: function() {
+      clearInterval(this.autoPlay);
     }
   }
 })

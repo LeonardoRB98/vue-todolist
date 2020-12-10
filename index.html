@@ -12,6 +12,9 @@
         <h1>TODO</h1>
         <input v-model = "newTask" @keyup="addtaskByKeycode" type="text" name="" value="" placeholder="aggiungi alla todo">
         <button  @click="newTaskPush" type="button" name="button">Aggiungi</button>
+        <hr>
+        <button @click="autoTask" type="button" name="button">Start</button>
+        <button @click="stopAutoTask" type="button" name="button">Stop</button>
         <ol>
           <li v-for="(task, index) in tasks">{{ task }} <span @click="removeTask(index)">X</span></li>
         </ol>
@@ -20,4 +23,3 @@
     <script src="js/sctipt.js" charset="utf-8"></script>
   </body>
 </html>
-<!-- tasks.push(newTask) -->

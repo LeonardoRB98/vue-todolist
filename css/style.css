@@ -27,6 +27,11 @@
   box-shadow: none;
 }
 #container ol {
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80%;
   padding-left: 20px;
 }
 li span {
