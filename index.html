@@ -10,8 +10,8 @@
     <div id="wrapper">
       <div id="container">
         <h1>TODO</h1>
-        <input v-model = "newTask" type="text" name="" value="" placeholder="aggiungi alla todo">
-        <button @click="newTaskPush" type="button" name="button">Aggiungi</button>
+        <input v-model = "newTask" @keyup="addtaskByKeycode" type="text" name="" value="" placeholder="aggiungi alla todo">
+        <button  @click="newTaskPush" type="button" name="button">Aggiungi</button>
         <ol>
           <li v-for="(task, index) in tasks">{{ task }} <span @click="removeTask(index)">X</span></li>
         </ol>
