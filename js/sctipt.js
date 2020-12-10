@@ -22,8 +22,12 @@ let app = new Vue ({
   },
   methods: {
     newTaskPush: function() {
-      this.tasks.push(this.newTask);
-      this.newTask = '';
+      if (this.newTask == '') {
+        alert('campo vuoto')
+      } else {
+        this.tasks.push(this.newTask);
+        this.newTask = '';
+      }
     },
     removeTask: function(i) {
       this.tasks.splice(i, 1);
