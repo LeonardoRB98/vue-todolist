@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="container">
+        <h1>TODO</h1>
+        <input v-model = "newTask" type="text" name="" value="" placeholder="aggiungi alla todo">
+        <button @click="newTaskPush" type="button" name="button">Aggiungi</button>
+        <ol>
+          <li v-for="(task, index) in tasks">{{ task }} <span @click="removeTask(index)">X</span></li>
+        </ol>
+      </div>
+    </div>
+    <script src="js/sctipt.js" charset="utf-8"></script>
+  </body>
+</html>
+<!-- tasks.push(newTask) -->
